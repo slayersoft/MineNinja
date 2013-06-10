@@ -1,0 +1,169 @@
+
+table.acuity {
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 1em;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+table.acuity caption {
+  text-align: left;
+  font: normal 1em helvetica, verdana, arial,  sans-serif;
+  background: transparent;
+}
+
+table.acuity td, th {
+  color: #242424;
+  padding: .8em;
+}
+
+table.acuity td.hostname {
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	font-size: 1.2em;
+	color: #242424;
+}
+
+table.acuity .red {
+  background-color: #fbeeee;
+  color:#242424;
+}
+
+table.acuity .yellow {
+  background-color: #fef9ed;
+  color:#242424;
+}
+
+table.acuity .green {
+  background-color: #E9fee9;
+  color:#242424;
+}
+
+table.acuity thead th, tfoot th {
+  font: bold 1em helvetica, verdana, arial, sans-serif;
+  text-align: left;
+  background: #242424;
+  color: #dadada;
+  padding-top:4px;
+  }
+
+table.acuity tbody tr{
+ border: 1px solid black;
+ }
+
+table.acuity tbody td a {
+  background: transparent;
+  text-decoration: none;
+  color: #242424;
+  }
+table.acuity tbody td a:hover {
+  background: transparent;
+  color: #db0600;
+  }
+table.acuity tbody th a {
+  font: bold 1em helvetica, verdana, arial, sans-serif;
+  background: transparent;
+  text-decoration: none;
+  font-weight:normal;
+  color: #9F9F9F;
+  }
+  
+  
+table.acuity tbody th, tbody td {
+  vertical-align: top;
+  text-align: left;
+  background: #fefefe;
+  color: #242424;
+  }
+
+
+
+table.acuity .bottomleft{
+	                        -moz-border-radius:0  0 0 6px;
+				                                        -webkit-border-radius: 0 0 0 6px;
+									                                                          border-radius: 0 0 0 6px;
+																                                                                                        }
+table.acuity .topleft {
+
+	    -moz-border-radius: 6px 0 0 0;
+	        -webkit-border-radius: 6px 0 0 0;
+		    border-radius: 6px 0 0 0;
+	    }
+	    
+table.acuity .topright {
+		        -moz-border-radius: 0 6px 0 0;
+			    -webkit-border-radius: 0 6px 0 0;
+			        border-radius: 0 6px 0 0;
+			}
+
+
+table.acuity .bottomright {
+                          -moz-border-radius: 0 0 6px 0;
+                          -webkit-border-radius: 0 0 6px 0;
+                               border-radius: 0 0 6px 0;
+				                                }
+
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px),
+only screen and (min-device-width: 560px) and (max-device-width: 1136px) and (-webkit-min-device-pixel-ratio: 2){
+
+	
+	/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr { 
+					display: block; 
+						}
+							
+							/* Hide table headers (but not display: none;, for accessibility) */
+							thead tr { 
+										position: absolute;
+												top: -9999px;
+														left: -9999px;
+															}
+																
+																tr { border: none; }
+																	
+																	td { 
+																				/* Behave  like a "row" */
+																				border: none;
+																								position: relative;
+																										padding-left: 44%; 
+																				}
+																												
+																												td:before { 
+																															/* Now like a table header */
+																															position: absolute;
+																																	/* Top/left values mimic padding */
+																																	top: 6px;
+																																			left: 6px;
+																																					width: 45%; 
+																																							padding-right: 10px; 
+																																									white-space: nowrap;
+																																											
+																																											/*
+																																											 * 	Label the data
+																																											 * 		*/
+									
+}
+td:before{ /* prints the value of data-label attribute before the column data */
+			font-weight:bold;
+			vertical-align: top;
+			padding:.4em;
+			text-align:left;
+									content:" "attr(data-label)" ";	/* call the attribute value of data-label and adds a string // */
+					
+
+}
+
+table.acuity tbody th, tbody td {
+	  vertical-align: top;
+	    text-align: center;
+	      }
+.addhost{
+    text-align: left;
+}
+
+}
+ 

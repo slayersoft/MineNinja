@@ -1,0 +1,58 @@
+Version 1.00 (07. January 2012) - Initial Release
+
+
+Version 1.01 (14. January 2012) - Bugfixes and Enhancements
+- Added possibility to define a port per host. No limitation
+  to standard-port 4028 anymore.
+
+- Fixed a bug where Disabled GPU's weren't noticed as
+  "not running" and therefore not display as "red".
+
+- Fixed a bug where stales where not displayed correctly. 
+ 
+
+Version 1.02 (17. January 2012) - Enhancements
+- Added Sum Column in Hostoverview
+
+- Added possibility to "Expand all hosts" as requested
+  in bitcoin forums.
+
+Version 1.03 (31. January 2012) - Bugfix Release
+- CGMiner 2.2.x broke my anubis, fixed bugs, works correctly now
+
+Version 2.00 (20 Febuary 2012) - Enhancements by P_Shep @bitcoiltalk.org
+Changes:
+90% re-written, repeated code moved it all to more easily maintained functions.
+Changed database API from MYSQL specific, to PDO, which allows for nearly any database to be used. Only coded and tested for MYSQL and SQLite, but you can add your own fairly easily.
+Changed the way some items are displayed:
+- Max temp rather than avg temp
+- Share ordering is more consistant across host/device display
+- Added utility
+- Added both absolute quantity and percentage of shares to each item
+- Missing / invalid values displayed more gracefully
+- Other nip/tucks here and there.
+Added pool display to host data:
+- Added priority pool selection.
+Added new device management page:
+- Start / stop / restart each device
+- change all settings CGminer Allows:
+-- GPU Clock
+-- MEM clock
+-- GPU voltage
+-- Fan speed
+-- Intensity
+
+Caveats:
+This won't work if you're moving up from OCminer's initial versions which didn't have the port selection. You'll have to step up to his 1.03 version (which adds the port to the database), then on to this.
+Uses PDO database interface. I have no idea if your machine will support it (it *SHOULD* - the direct, database specific API is being depreciated).
+I suck at javascript. Could do with some tidying up / beautification.
+
+Version 2.10 (12 May 2012) - Enhancements by P_Shep @bitcoiltalk.org
+Changes:
+Expanded displayed parameters
+Better FPGA display and handling (enable/disable)
+Added pool deletion and addition
+Added action feedback
+Added CGMiner restart and quit.
+
+
