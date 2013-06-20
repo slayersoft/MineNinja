@@ -49,10 +49,10 @@ ddsmoothmenu.init({
                 <div class="cleaner h20"></div>
 
 			<h4>Whats this ?</h4>
-		MineNinja is a Beaglebone based device for managing USB-based bitcoin mining devices. MineNinja runs cgminer as a service on the Beaglebone and uses Anubis as its web frontend.
-	Anubis "watches" your hosts by connecting to the API Port of cgminer. You can easily add additional hosts to manage your whole operation using a single MineNinja.
+		MineNinja is a Beaglebone based device for managing USB-based bitcoin mining devices. MineNinja runs cgminer/or bfgminer as a service on the Beaglebone and uses Anubis as its web frontend.
+	Anubis "watches" your hosts by connecting to the API Port of cgminer (or bfgminer). You can easily add additional hosts to manage your whole operation using a single MineNinja.
   <div class="cleaner h20"></div>		<h4>How Do I add more hosts?</h4>
-			The Connection is very simple, just add "--api-listen" (and "--api-network") to the bfgminer command line and bfgminer's api is enabled. Then you can simply <a href="addhost.php">add a host here.</a></td>
+			The Connection is very simple, just add "--api-listen" (and "--api-network") to the cgminer command line and cgminer's api is enabled. Then you can simply <a href="addhost.php">add a host here.</a></td>
   <div class="cleaner h20"></div>		<h4>Something is wrong/does not work as expected.</h4>
 			MineNinja and the open source software it is built on is still under heavy development.  Please visit mineninja.com for release updates.
   <div class="cleaner h20"></div>		<h4>Installation?</h4>
