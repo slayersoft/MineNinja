@@ -10,6 +10,8 @@ BuildScripts - Notes on how to configure an off the shelf BeagleBone black into 
 
 Case - The STL files for the MineNinja Case and Lid
 
-Image file for BeagleBone Black: mineninjaBBB.img.xz
+Image file for BeagleBone Black: mineninjaBBB.img.xz  Note there's a small issue with this image, 
+please ssh to the board and drop/add the anubis database in mysql to fix.
+
 
 Please see the wiki for flashing instructions.
