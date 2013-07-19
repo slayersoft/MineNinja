@@ -13,3 +13,5 @@ Case - The STL files for the MineNinja Case and Lid
 Image file for BeagleBone Black: Get the IMG binary relase from http://release.mineninja.com
 
 Please see the wiki for flashing instructions.
+
+18.7.13 Release - Update to 6/20 Angrstrom image, add wifi support, add stratum proxy.
