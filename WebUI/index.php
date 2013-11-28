@@ -74,32 +74,72 @@ ddsmoothmenu.init({
         <div id="theticker" style="float:left;">
         <h3>MtGox USD/BTC</h3>
         <h2><span style="color:#242424" id="result"></span></h2></div>
-        <div id="thegauges">
-    	<canvas id="gauge1" width="250" height="250"
-		data-type="canv-gauge"
-		data-title="Speed"
-		data-min-value="0"
-		data-max-value="10"
-		data-major-ticks="0 1 2 3 4 5 6 7 8 9 10"
-		data-minor-ticks="2"
-		data-stroke-ticks="true"
-		data-units="GH/s"
-		data-value-format="2.2"
-		data-glow="true"
-		data-animation-delay="10"
-		data-animation-duration="200"
-		data-animation-fn="bounce"
-		data-colors-needle="#000 #f00"
-		data-highlights="0 3 #E90e00, 3 7 #ffee00, 7 10 #53df00"
+	<div id="thegauges">
+
+<?php 
+$result = $dbh->query("SELECT SUM(mhash_desired) AS maxhash FROM hosts");
+$desmhash = $result->fetch(PDO::FETCH_ASSOC);
+$ghashmax = $desmhash['maxhash']/1000 * 1.1;
+$ghash10 = intval($ghashmax * .1);
+$ghash20 = intval($ghashmax * .2);
+$ghash30 = intval($ghashmax * .3);
+$ghash40 = intval($ghashmax * .4);
+$ghash50 = intval($ghashmax * .5);
+$ghash60 = intval($ghashmax * .6);
+$ghash70 = intval($ghashmax * .7);
+$ghash80 = intval($ghashmax * .8);
+$ghash90 = intval($ghashmax * .9);
+
+
+
+
+$ticks = "0 $ghash10 $ghash20 $ghash30 $ghash40 $ghash50 $ghash60 $ghash70 $ghash80 $ghash90 $ghashmax";
+$highlights = "0 $ghash30 #E90e00, $ghash30 $ghash70 #ffee00, $ghash70 $ghashmax #53df00";
+
+echo <<<END
+
+
+
+<canvas id="gauge1" width="250" height="250"
+                data-type="canv-gauge"
+                data-title="Speed"
+                data-min-value="0"
+                data-max-value="$ghashmax"
+                data-major-ticks="$ticks"
+                data-minor-ticks="2"
+                data-stroke-ticks="true"
+                data-units="GH/s"
+                data-value-format="2.2"
+                data-glow="true"
+                data-animation-delay="10"
+                data-animation-duration="200"
+                data-animation-fn="bounce"
+                data-colors-needle="#000 #f00"
+                data-highlights="$highlights"
                 data-value="800"
-		data-onready="setInterval( function() { Gauge.Collection.get('gauge1').setValue( parseInt(document.getElementById('Speed').innerHTML)/1000);}, 1000);"
-		data-colors-plate= "#242424"
-			data-colors-majorTicks= "#f5f5f5"
-			data-colors-minorTicks= "#ddd"
-			data-colors-title= "#fff"
-			data-colors-units= "#ccc"
-			data-colors-numbers="#eee"
-				></canvas></div>
+                data-onready="setInterval( function() { Gauge.Collection.get('gauge1').setValue( parseInt(document.getElementById('Speed').innerHTML)/1000);}, 1000);"
+                data-colors-plate= "#242424"
+                        data-colors-majorTicks= "#f5f5f5"
+                        data-colors-minorTicks= "#ddd"
+                        data-colors-title= "#fff"
+                        data-colors-units= "#ccc"
+                        data-colors-numbers="#eee"
+                                ></canvas>
+
+
+
+END;
+        
+
+
+
+
+
+
+
+?>
+
+				</div>
 
   <div class="cleaner h20"></div>
 		<h2>Hosts</h2>
@@ -124,6 +164,7 @@ else
 {
 	echo "No Hosts found, you might like to <a href=\"addhost.php\">add a host</a> ?<BR>";
 }
+
 
 ?>
 
